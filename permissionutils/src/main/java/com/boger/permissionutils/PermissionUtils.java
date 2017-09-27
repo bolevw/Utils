@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class PermissionUtils {
 
     @TargetApi(Build.VERSION_CODES.M)
     public static boolean checkSelfPermission(Context context, String string) {
-        return context.checkSelfPermission(string) == context.getPackageManager().PERMISSION_GRANTED;
+        return ContextCompat.checkSelfPermission(context, string) == context.getPackageManager().PERMISSION_GRANTED;
     }
 
 
